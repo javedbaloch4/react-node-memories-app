@@ -1,2 +1,2 @@
-# react-node-memories-app
-React, Node, Express, MongoDB (MERN) Stack, Redux with Material UI
+# react-node-memories
+Memroies app using MERN stack Redux, Material UI
