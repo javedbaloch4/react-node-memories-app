@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import { TextField, Button, Typography, Paper } from '@material-ui/core'
 import FileBase from 'react-file-base64'
+import { useDispatch } from 'react-redux'
 
 import useStyles from '../Form/styles'
+import { createPost } from '../../actions/posts'
 
 const Form = () => {
     const classes = useStyles()
     const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: ''})
+    const dispatch = useDispatch()
 
-    const handleSubmit = () => {
-        console.log("Handle submit")
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        dispatch(createPost(postData))
     }
 
     const clear = () => {
